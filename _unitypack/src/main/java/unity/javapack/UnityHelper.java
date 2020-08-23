@@ -1,10 +1,11 @@
 package unity.javapack;
 
 import android.app.Activity;
+import android.content.Context;
 import android.view.View;
 import android.widget.FrameLayout;
-
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 
 @SuppressWarnings("Only provide to unity.")
 public final class UnityHelper {
@@ -98,6 +99,26 @@ public final class UnityHelper {
           UnityLogger.e("unity.javapack.UnityHelper", e);
         }
       }
+    }
+  }
+
+  public static <T extends View> T newView(Class<T> classOfT) {
+    if (null != classOfT) {
+      try {
+        return classOfT
+            .getDeclaredConstructor(Context.class)
+            .newInstance(getUnityPlayerCurrentActivity());
+      } catch (IllegalAccessException e) {
+        return null;
+      } catch (InstantiationException e) {
+        return null;
+      } catch (InvocationTargetException e) {
+        return null;
+      } catch (NoSuchMethodException e) {
+        return null;
+      }
+    } else {
+      return null;
     }
   }
 }
