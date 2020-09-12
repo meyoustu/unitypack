@@ -16,6 +16,6 @@ allprojects {
 ### Step 2. Add the dependency
 ``` gradle
 dependencies {
-    implementation implementation 'com.github.meyoustu:unitypack:2020.9.12.948'
+    implementation 'com.github.meyoustu:unitypack:2020.9.12.948'
 }
 ```
