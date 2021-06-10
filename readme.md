@@ -1,5 +1,5 @@
 # unitypack
-In order to use Unity more conveniently.
+In order to use Unity more conveniently
 ******
 ******
 ## To get a Git project into your build:
